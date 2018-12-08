@@ -1,8 +1,8 @@
 <!-- # -->
 <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-input placeholder="Enter Destination" padding-left autofocus></ion-input>
+  <ion-navbar class="letra">
+    <ion-input class="letra" placeholder="Buscar amigos.." padding-left autofocus></ion-input>
   </ion-navbar>
 
 </ion-header>
@@ -11,13 +11,13 @@
   <div class="list-no-border">
     <!--nearby places-->
     <ion-item *ngFor="let item of places.nearby" tappable (click)="searchBy(item)">
-      <ion-icon name="md-locate" item-left color="primary"></ion-icon>
-      <span ion-text color="primary">{{ item.name }}</span>
+       <ion-icon class="color" name="contact"></ion-icon>
+      <span ion-text class="letra" >{{ item.name }}</span>
     </ion-item>
     <!--recent places-->
     <ion-item *ngFor="let item of places.recent" tappable (click)="searchBy(item)">
-      <ion-icon name="md-time" item-left color="primary"></ion-icon>
-      <span ion-text color="primary">{{ item.name }}</span>
+      <ion-icon name="md-time" item-left class="color"></ion-icon>
+      <span ion-text class="letra">{{ item.name }}</span>
     </ion-item>
   </div>
 </ion-content>

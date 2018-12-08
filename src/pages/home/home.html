@@ -1,15 +1,21 @@
 <!-- -->
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar class="letra">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <strong>Ionic 3</strong> Start Theme
+      <strong >PET SITE</strong> 
     </ion-title>
     <ion-buttons end>
       <button ion-button tappable (click)="presentNotifications($event)">
         <ion-icon name="notifications"></ion-icon>
+      </button>
+        <button ion-button tappable (click)="chossPlace('from')">
+            <ion-icon name="chatbubbles"></ion-icon>
+        </button>
+      <button ion-button tappable (click)="choosePlace('from')">
+      <ion-icon name="search"></ion-icon>
       </button>
       <button ion-button tappable (click)="goToAccount()">
         <ion-icon name="cog"></ion-icon>
@@ -17,8 +23,9 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+//Aquí va el home
 
-<ion-content padding class="animated fadeIn common-bg">
+<!--<ion-content padding class="animated fadeIn common-bg">
 
   <ion-card no-margin margin-bottom class="full-width">
     <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
@@ -35,4 +42,4 @@
     <ion-icon name="search"></ion-icon> Search
   </button>
 
-</ion-content>
+</ion-content>-->

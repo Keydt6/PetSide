@@ -16,33 +16,33 @@ export class SearchLocationPage {
     nearby: [
       {
         id: 1,
-        name: "Current Location"
+        name: "Petra Cordoba"
       },
       {
         id: 2,
-        name: "Rio de Janeiro, Brazil"
+        name: "Argenis Gomez"
       },
       {
         id: 3,
-        name: "São Paulo, Brazil"
+        name: "Keyvin Diaz"
       },
       {
         id: 4,
-        name: "New York, United States"
+        name: "Luis Gomez"
       },
       {
         id: 5,
-        name: "London, United Kingdom"
+        name: "Hermes Soto"
       },
       {
         id: 6,
-        name: "Same as pickup"
+        name: "Jose Jose"
       }
     ],
     recent: [
       {
         id: 1,
-        name: "Rio de Janeiro"
+        name: "Luis Gomez"
       }
     ]
   };

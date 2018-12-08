@@ -5,16 +5,16 @@
     <!-- Logo -->
     <div padding-horizontal text-center class="animated fadeInDown">
       <div class="logo"></div>
-      <h2 ion-text class="text-primary">
-        <strong>Ionic 3</strong> Start Theme
+      <h2 ion-text class="color">
+        <strong class="letra">PET SITE</strong>
       </h2>
     </div>
 
     <!-- Login form -->
-    <form class="list-form">
+    <form class="list-form, letra">
       <ion-item>
         <ion-label floating>
-          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          <ion-icon name="mail" item-start class="color"></ion-icon>
           Email
         </ion-label>
         <ion-input type="email"></ion-input>
@@ -22,22 +22,22 @@
 
       <ion-item>
         <ion-label floating>
-          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          <ion-icon name="lock" item-start class="color"></ion-icon>
           Password
         </ion-label>
         <ion-input type="password"></ion-input>
       </ion-item>
     </form>
 
-    <p text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p>
+    <p text-right ion-text class="color, letra" tappable (click)="forgotPass()"><strong>Forgot Password?</strong></p>
 
     <div>
-      <button ion-button icon-start block color="dark" tappable (click)="login()">
+      <button ion-button icon-start block class="color, letra, fondo" tappable (click)="login()">
         <ion-icon name="log-in"></ion-icon>
         SIGN IN
       </button>
 
-      <p text-center ion-text color="secondary">Or Sign in with:</p>
+      <p text-center ion-text class="letra">Or Sign in with:</p>
 
       <ion-grid>
         <ion-row>
@@ -64,7 +64,7 @@
 
     <!-- Other links -->
     <div text-center margin-top>
-      <span ion-text color="secondary" tappable (click)="register()">New here? <strong>Sign up</strong></span>
+      <span ion-text class="letra" tappable (click)="register()">New here? <strong>Sign up</strong></span>
     </div>
 
   </div>

@@ -5,16 +5,16 @@
     <!-- Logo -->
     <div padding text-center>
       <div class="logo"></div>
-      <h2 ion-text class="text-primary">
-        <strong>Ionic 3</strong> Start Theme
+      <h2 ion-text class="letra">
+        <strong>PET SITE</strong>
       </h2>
     </div>
 
     <!-- Login form -->
-    <form class="list-form">
+    <form class="list-form, letra">
       <ion-item>
         <ion-label floating>
-          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          <ion-icon name="person" item-start class="color"></ion-icon>
           Full Name
         </ion-label>
         <ion-input type="text"></ion-input>
@@ -22,7 +22,7 @@
 
       <ion-item>
         <ion-label floating>
-          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          <ion-icon name="mail" item-start class="color"></ion-icon>
           Email
         </ion-label>
         <ion-input type="email"></ion-input>
@@ -30,7 +30,7 @@
 
       <ion-item>
         <ion-label floating>
-          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          <ion-icon name="lock" item-start class="color"></ion-icon>
           Password
         </ion-label>
         <ion-input type="password"></ion-input>
@@ -38,11 +38,11 @@
     </form>
 
     <div margin-top>
-      <button ion-button block color="dark" tappable (click)="register()">
+      <button ion-button block class="fondo" tappable (click)="register()">
         SIGN UP
       </button>
 
-      <p text-center ion-text color="secondary">Or Sign Up with:</p>
+      <p text-center ion-text class="letra">Or Sign Up with:</p>
 
       <ion-grid>
         <ion-row>
@@ -67,7 +67,7 @@
 
     <!-- Other links -->
     <div text-center margin-top>
-      <span ion-text color="primary" tappable (click)="login()">I have an account</span>
+      <span ion-text class="letra" tappable (click)="login()">I have an account</span>
     </div>
 
   </div>
