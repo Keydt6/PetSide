@@ -1,2 +1,1 @@
-# PetSide
-Proyecto laboratorio 3
+# Lab3
