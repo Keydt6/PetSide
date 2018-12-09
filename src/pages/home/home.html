@@ -2,7 +2,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="chatboxes"></ion-icon>
     </button>
     <ion-title>
       <strong>Ionic 3</strong> Start Theme
@@ -36,3 +36,13 @@
   </button>
 
 </ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar transparent>
+  <div class="input-wrap">
+    <button end ion-button clear icon-only item-left (click)="toChat()">
+      <ion-icon name="md-happy"></ion-icon>
+    </button>
+  </div>
+</ion-toolbar>
+</ion-footer>
