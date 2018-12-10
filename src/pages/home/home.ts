@@ -2,11 +2,12 @@ import {Component} from "@angular/core";
 import {NavController, PopoverController} from "ionic-angular";
 import {Storage} from '@ionic/storage';
 
+
 import {NotificationsPage} from "../notifications/notifications";
 import {SettingsPage} from "../settings/settings";
 import {TripsPage} from "../trips/trips";
 import {SearchLocationPage} from "../search-location/search-location";
-
+import {ChatPage} from "../chat/chat";
 
 @Component({
   selector: 'page-home',
@@ -16,7 +17,7 @@ import {SearchLocationPage} from "../search-location/search-location";
 export class HomePage {
   // search condition
   public search = {
-    name: "Rio de Janeiro, Brazil",
+    name: "Luis Gomez",
     date: new Date().toISOString()
   }
 
@@ -24,11 +25,11 @@ export class HomePage {
   }
 
   ionViewWillEnter() {
-    // this.search.pickup = "Rio de Janeiro, Brazil";
+    // this.search.pickup = "Luis Gomez";
     // this.search.dropOff = "Same as pickup";
     this.storage.get('pickup').then((val) => {
       if (val === null) {
-        this.search.name = "Rio de Janeiro, Brazil"
+        this.search.name = "Luis Gomez"
       } else {
         this.search.name = val;
       }
@@ -41,6 +42,7 @@ export class HomePage {
   doSearch() {
     this.nav.push(TripsPage);
   }
+ 
 
   // choose place
   choosePlace(from) {
@@ -58,6 +60,11 @@ export class HomePage {
     popover.present({
       ev: myEvent
     });
+  }
+
+  // to go chat page
+  goToChat() {
+    this.nav.push(ChatPage);
   }
 
 }
