@@ -24,6 +24,7 @@ import {SearchLocationPage} from "../pages/search-location/search-location";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
+import {EditProfilePage} from "../pages/edit-profile/edit-profile";
 
 // import services
 // end import services
@@ -44,7 +45,8 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
     RegisterPage,
     SearchLocationPage,
     TripDetailPage,
-    TripsPage
+    TripsPage,
+    EditProfilePage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ import {LocalWeatherPage} from "../pages/local-weather/local-weather";
     RegisterPage,
     SearchLocationPage,
     TripDetailPage,
-    TripsPage
+    TripsPage,
+    EditProfilePage
   ],
   providers: [
     StatusBar,
