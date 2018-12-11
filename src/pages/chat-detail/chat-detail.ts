@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ChatPage } from '../chat/chat';
 /**
  * Generated class for the ChatDetailPage page.
  *
@@ -14,6 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'chat-detail.html',
 })
 export class ChatDetailPage {
+
+	public chats = [
+		{
+			type: "join",
+			message: "Hola, hicista el ejercicio",
+			user: "Luis",
+			nickname: "nickname	",
+			sendDate: Date()
+		}
+	];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

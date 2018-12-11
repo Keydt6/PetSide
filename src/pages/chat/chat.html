@@ -15,12 +15,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let room of rooms">
-      {{room.roomname}}
-      <ion-icon name="chatboxes" item-end (click)="joinRoom(room.key)"></ion-icon>
+<ion-content>
+  <div class="list-no-border">
+    <!--nearby places-->
+    <ion-item *ngFor="let item of places.nearby" tappable (click)="chatBy()">
+       <ion-icon class="color" name="contact"></ion-icon>
+      <span ion-text class="letra" >{{ item.name }}</span>
     </ion-item>
-  </ion-list>
+    <!--recent places
+    <ion-item *ngFor="let item of places.recent" tappable (click)="chatBy(item)">
+      <ion-icon name="md-time" item-left class="color"></ion-icon>
+      <span ion-text class="letra">{{ item.name }}</span>
+    </ion-item>-->
+  </div>
 </ion-content>
-

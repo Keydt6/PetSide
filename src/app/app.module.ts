@@ -26,6 +26,7 @@ import {TripsPage} from "../pages/trips/trips";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 import {AddChatPage} from "../pages/add-chat/add-chat";
 import {ChatPage} from "../pages/chat/chat";
+import {ChatDetailPage} from "../pages/chat-detail/chat-detail";
 
 // import services
 // end import services
@@ -41,6 +42,7 @@ import {ChatPage} from "../pages/chat/chat";
     AddChatPage,
     CheckoutTripPage,
     ChatPage,
+    ChatDetailPage,
     HomePage,
     LoginPage,
     LocalWeatherPage,
@@ -70,6 +72,7 @@ import {ChatPage} from "../pages/chat/chat";
     AddChatPage,
     CheckoutTripPage,
     ChatPage,
+    ChatDetailPage,
     HomePage,
     LoginPage,
     LocalWeatherPage,
