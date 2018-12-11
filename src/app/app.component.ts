@@ -8,6 +8,7 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
+import { EditProfilePage } from "../pages/edit-profile/edit-profile";
 
 export interface MenuItem {
     title: string;
@@ -23,6 +24,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LoginPage;
+
+  formPage: any = EditProfilePage;
 
   appMenuItems: Array<MenuItem>;
 
@@ -63,6 +66,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  editProfile() {
+    this.nav.setRoot(this.formPage);
   }
 
   logout() {

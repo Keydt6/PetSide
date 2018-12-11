@@ -14,6 +14,32 @@
   </ion-navbar>
 </ion-header>
 
+<ion-content>
+  <ion-list>
+    <ion-item no-lines>
+      <div class="chat-status" text-center>
+        <span class="chat-date">11/12/2018</span>
+        <span class="chat-content-center">Hiciste la practica?</span>
+      </div>
+      <ng-template #message>
+        <div class="chat-message" text-right>
+          <div class="right-bubble">
+            <span class="msg-name">Me</span>
+            <span class="msg-date">11/12/2018</span>
+            <p text-wrap>Si, estuvo fácil.</p>
+          </div>
+        </div>
+        <div class="chat-message" text-left>
+          <div class="left-bubble">
+            <span class="msg-name">Juan de Dios</span>
+            <span class="msg-date">Aun falta una práctica</span>
+            <p text-wrap>Hay que estudiar.</p>
+          </div>
+        </div>
+      </ng-template>
+    </ion-item>
+  </ion-list>
+</ion-content>
 
 <ion-footer>
   <ion-grid>

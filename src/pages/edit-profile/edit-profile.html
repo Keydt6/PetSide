@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Formulario</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="myForm" (ngSubmit)="saveData()">
+    <ion-list>
+      <ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        <ion-label stacked>Nombres:</ion-label>
+        <ion-input formControlName="name" type="text" placeholder="Nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" item-start></ion-icon>
+        <ion-label stacked>Apellidos:</ion-label>
+        <ion-input formControlName="lastName" type="text" placeholder="Apellidos"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="mail" item-start></ion-icon>
+        <ion-label stacked>Correo electronico:</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="calendar" item-start></ion-icon>
+        <ion-label stacked>Fecha de nacimiento:</ion-label>
+        <ion-datetime formControlName="dateBirth" displayFormat="MM-DD-YYYY" placeholder="MM-DD-YYY"></ion-datetime>
+      </ion-item>
+      <div formGroupName="passwordRetry">
+        <ion-item>
+          <ion-icon name="eye" item-start></ion-icon>
+          <ion-label stacked>Contraseña:</ion-label>
+          <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="eye" item-start></ion-icon>
+          <ion-label stacked>Confirmar contraseña:</ion-label>
+          <ion-input formControlName="passwordConfirmation" type="password" placeholder="Confirmar contraseña"></ion-input>
+        </ion-item>
+      </div>
+      <ion-row radio-group formControlName="gender">
+        <ion-col>
+          <ion-item>
+            <ion-icon name="woman" item-start></ion-icon>
+            <ion-label>Mujer</ion-label>
+            <ion-radio value="2"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-icon name="man" item-start></ion-icon>
+            <ion-label>Hombre</ion-label>
+            <ion-radio value="1"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+    <div padding>
+      <button ion-button block type="submit" [disabled]="!myForm.valid">Guardar</button>
+    </div>
+  </form>
+</ion-content>
