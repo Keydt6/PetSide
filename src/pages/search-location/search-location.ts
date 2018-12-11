@@ -16,7 +16,7 @@ export class SearchLocationPage {
     nearby: [
       {
         id: 1,
-        name: "Petra Cordoba"
+        name: "Petra Cordova"
       },
       {
         id: 2,

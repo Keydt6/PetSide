@@ -29,6 +29,7 @@ export class MyApp {
 
   appMenuItems: Array<MenuItem>;
 
+
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
@@ -41,6 +42,7 @@ export class MyApp {
       {title: 'Home', component: HomePage, icon: 'home'},
       {title: 'Local Weather', component: LocalWeatherPage, icon: 'partly-sunny'}
     ];
+    
   }
 
   initializeApp() {

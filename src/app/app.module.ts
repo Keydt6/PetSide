@@ -24,7 +24,13 @@ import {SearchLocationPage} from "../pages/search-location/search-location";
 import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
+<<<<<<< HEAD
 import {EditProfilePage} from "../pages/edit-profile/edit-profile";
+=======
+import {AddChatPage} from "../pages/add-chat/add-chat";
+import {ChatPage} from "../pages/chat/chat";
+import {ChatDetailPage} from "../pages/chat-detail/chat-detail";
+>>>>>>> 63d08064d8665d842ebf70e117d07884e6c1c719
 
 // import services
 // end import services
@@ -37,7 +43,10 @@ import {EditProfilePage} from "../pages/edit-profile/edit-profile";
   declarations: [
     MyApp,
     SettingsPage,
+    AddChatPage,
     CheckoutTripPage,
+    ChatPage,
+    ChatDetailPage,
     HomePage,
     LoginPage,
     LocalWeatherPage,
@@ -65,7 +74,10 @@ import {EditProfilePage} from "../pages/edit-profile/edit-profile";
   entryComponents: [
     MyApp,
     SettingsPage,
+    AddChatPage,
     CheckoutTripPage,
+    ChatPage,
+    ChatDetailPage,
     HomePage,
     LoginPage,
     LocalWeatherPage,

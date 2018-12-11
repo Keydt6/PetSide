@@ -7,7 +7,7 @@ import {NotificationsPage} from "../notifications/notifications";
 import {SettingsPage} from "../settings/settings";
 import {TripsPage} from "../trips/trips";
 import {SearchLocationPage} from "../search-location/search-location";
-
+import {ChatPage} from "../chat/chat";
 
 @Component({
   selector: 'page-home',
@@ -60,6 +60,11 @@ export class HomePage {
     popover.present({
       ev: myEvent
     });
+  }
+
+  // to go chat page
+  goToChat() {
+    this.nav.push(ChatPage);
   }
 
 }
