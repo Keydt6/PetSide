@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {HomePage} from "../home/home";
 /**
  * Generated class for the EditProfilePage page.
  *
@@ -17,7 +18,7 @@ export class EditProfilePage {
 	myForm: FormGroup;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  	public formBuilder: FormBuilder) {
+  	public formBuilder: FormBuilder, public popoverCtrl: PopoverController) {
   	this.myForm = this.createMyForm();
   }
 
@@ -41,6 +42,10 @@ export class EditProfilePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EditProfilePage');
+  }
+
+  goToHome() {
+    this.navCtrl.push(HomePage);
   }
 
 }

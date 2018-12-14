@@ -5,7 +5,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <strong >PET SIDE</strong> 
+      <strong >PET SITE</strong> 
     </ion-title>
     <ion-buttons end>
       <button ion-button tappable (click)="presentNotifications($event)">
@@ -23,10 +23,50 @@
     </ion-buttons>
   </ion-navbar>
 </ion-header>
+
 //Aquí va el home
+<ion-content padding class="transparent-header">
+  <div id="profile-bg" [ngStyle]="{'background-image': 'url(' + user.coverImage +')'}"></div>
+  <div id="content">
+    <div id="posts">
+      <ion-card *ngFor="let post of posts">
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="user.profileImage">
+          </ion-avatar>
+          <h2 class="sticky">{{user.name}}</h2>
+          <p>{{post.date}}</p>
+        </ion-item>
+        <img [src]="post.postImageUrl" (click)="imageTapped(post)">
+        <ion-card-content>
+          <p>{{post.text}}</p>
+        </ion-card-content>
+        <ion-row>
+          <ion-col col-4>
+            <button ion-button class="lc" clear small icon-left (click)="like(post)">
+                <ion-icon name='thumbs-up'></ion-icon>
+                {{post.likes}} Likes
+              </button>
+          </ion-col>
+          <ion-col col-5>
+            <button ion-button no-padding class="lc" clear small icon-left (click)="comment(post)">
+                <ion-icon name='text'></ion-icon>
+                {{post.comments}} Comments
+              </button>
+          </ion-col>
+          <ion-col col-3 align-self-center text-center>
+            <p>
+              {{post.timestamp}}
+            </p>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
 
-<!--<ion-content padding class="animated fadeIn common-bg">
-
+<!--
+<ion-content padding class="animated fadeIn common-bg">
   <ion-card no-margin margin-bottom class="full-width">
     <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
       <ion-icon name="search" color="primary" item-left></ion-icon>
@@ -36,23 +76,12 @@
       <ion-icon name="md-calendar" color="primary" item-left></ion-icon>
       <ion-datetime class="no-pl" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="search.date"></ion-datetime>
     </ion-item>
+    <ion-item>
+      <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
+        <ion-icon name="search"></ion-icon> Search
+      </button>
+    </ion-item>
   </ion-card>
+</ion-content
+-->
 
-  <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
-    <ion-icon name="search"></ion-icon> Search
-  </button>
-
-<<<<<<< HEAD
-</ion-content>
-
-<ion-footer no-border>
-  <ion-toolbar transparent>
-  <div class="input-wrap">
-    <button end ion-button clear icon-only item-left (click)="toChat()">
-      <ion-icon name="md-happy"></ion-icon>
-    </button>
-  </div>
-</ion-toolbar>
-</ion-footer>
-=======
-</ion-content>-->

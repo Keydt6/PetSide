@@ -1,7 +1,7 @@
 page-chat-detail {
 
   ion-content {
-    background: url(../assets/img/bg.jpg) no-repeat center center fixed;
+    background: url(../assets/img/fondo.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 100%;
     overflow: hidden;
@@ -54,7 +54,7 @@ page-chat-detail {
       span.msg-name {
         font-size: 12px;
         font-weight: bold;
-        color: green;
+        color: blue;
       }
       span.msg-date {
         font-size: 10px;

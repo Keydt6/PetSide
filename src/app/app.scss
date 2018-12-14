@@ -300,7 +300,7 @@ ion-navbar.no-border {
   background-color: #fff;
   &::after {
     content: "";
-    background: url("../assets/img/bg.jpg") no-repeat;
+    background: url("../assets/img/fondo.jpg") no-repeat;
     background-size: cover;
     top: 0;
     left: 0;
@@ -324,7 +324,7 @@ ion-navbar.no-border {
         height: 60px;
         margin: 20px auto 0;
         border-radius: 10%;
-        background: url("../assets/img/ionic3-ico.png") no-repeat;
+        background: url("../assets/img/k.png") no-repeat;
         background-size: 100%;
       }
 
