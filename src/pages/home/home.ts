@@ -9,6 +9,7 @@ import {SettingsPage} from "../settings/settings";
 import {TripsPage} from "../trips/trips";
 import {SearchLocationPage} from "../search-location/search-location";
 import {ChatPage} from "../chat/chat";
+import {PerfilPage} from "../perfil/perfil";
 
 @Component({
   selector: 'page-home',
@@ -108,6 +109,15 @@ following = false;
   goToChat() {
     this.nav.push(ChatPage);
   }
+
+  goToProfile(){
+    this.nav.push(PerfilPage);
+  }
+
+  goToEditProfile(){
+    
+  }
+
 /*
   //publicaciones
   ionViewDidLoad() {

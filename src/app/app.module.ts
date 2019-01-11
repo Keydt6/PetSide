@@ -31,6 +31,7 @@ import {AddChatPage} from "../pages/add-chat/add-chat";
 import {ChatPage} from "../pages/chat/chat";
 import {ChatDetailPage} from "../pages/chat-detail/chat-detail";
 //>>>>>>> 63d08064d8665d842ebf70e117d07884e6c1c719
+import {PerfilPage} from "../pages/perfil/perfil";
 
 // import services
 // end import services
@@ -55,7 +56,8 @@ import {ChatDetailPage} from "../pages/chat-detail/chat-detail";
     SearchLocationPage,
     TripDetailPage,
     TripsPage,
-    EditProfilePage
+    EditProfilePage,
+    PerfilPage
   ],
   imports: [
     BrowserModule,
@@ -86,7 +88,8 @@ import {ChatDetailPage} from "../pages/chat-detail/chat-detail";
     SearchLocationPage,
     TripDetailPage,
     TripsPage,
-    EditProfilePage
+    EditProfilePage,
+    PerfilPage
   ],
   providers: [
     StatusBar,
