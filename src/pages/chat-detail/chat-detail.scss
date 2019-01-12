@@ -17,6 +17,17 @@ page-chat-detail {
       color: green;
     }
   }
+
+  .col1 {
+    width: 80%;
+
+  }
+
+  .col2, .col3 {
+    width: 10%;
+
+  }
+
   .chat-status {
     min-height: 49px;
     .chat-date {

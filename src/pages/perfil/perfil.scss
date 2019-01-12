@@ -6,6 +6,7 @@ page-perfil {
     font-weight: normal;
     font-style: normal;
   }
+
   $gradient: #F96B4C,
   #F23182;
   $radius: 10px;
@@ -14,11 +15,13 @@ page-perfil {
    :root {
     font-size: 16px;
   }
+
   * {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   html,
   body {
     width: 100%;
@@ -27,20 +30,24 @@ page-perfil {
     padding: 0;
     float: left;
   }
+
   body {
     background: #F0EFED;
     background-image: linear-gradient(to bottom, #E5E4E5, #C2C1C2);
     font-family: 'ProximaNova-Regular', Helvetica neue, sans-serif;
   }
+
   #posts {
     margin-top: 20vh;
   }
+
   .container {
     width: 100%;
     height: 100%;
     position: relative;
     margin: auto;
   }
+
   .card-profile {
     float: left;
     position: absolute;
@@ -66,9 +73,11 @@ page-perfil {
         opacity: 0.5;
         mix-blend-mode: lighten;
       }
+
       &:before {
         filter: grayscale(100%);
       }
+
       &:after {
         z-index: 2;
         mix-blend-mode: lighten;
@@ -76,6 +85,7 @@ page-perfil {
         opacity: 1;
       }
     }
+
     &_user-infos {
       position: absolute;
       z-index: 3;
@@ -132,6 +142,7 @@ page-perfil {
           top: 0;
         }
       }
+
       .infos_name,
       .infos_nick {
         display: block;
@@ -145,12 +156,14 @@ page-perfil {
         top: 8px;
         font-weight: 800;
       }
+
       .infos_nick {
         top: 32px;
         font-size: 14px;
         font-weight: 300;
       }
     }
+
     &_user-stats {
       background: #fff;
       float: left;
@@ -158,12 +171,14 @@ page-perfil {
       height: $datas-height;
       border-bottom-left-radius: $radius;
       border-bottom-right-radius: $radius;
+      
       .stats-holder {
         position: relative;
         margin-top: 2.8em;
         width: 100%;
         display: flex;
       }
+
       .user-stats {
         flex: 1;
         text-align: center;
@@ -177,6 +192,7 @@ page-perfil {
           font-weight: 500;
           letter-spacing: -0.2px;
         }
+        
         span {
           font-size: 26px;
           color: #5E5E5E;

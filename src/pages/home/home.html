@@ -26,7 +26,29 @@
 
 //Aquí va el home
 <ion-content padding class="transparent-header">
-  <div id="profile-bg" [ngStyle]="{'background-image': 'url(' + user.coverImage +')'}"></div>
+  
+  <div>
+    <div id="content">
+      <div id="posts">
+        <div class="pu">
+            <div class="pupu" style="width: 70%;
+            "> 
+              <ion-icon name="paw" class="color"></ion-icon>
+              <input class="post" type="textarea" rows="10" name="p" placeholder="Qué estas pensando?">
+            </div>
+            <div class="pupu" style="width: 10%;
+            ">
+              <ion-icon name="photos" class="color"></ion-icon>
+            </div>
+            <div class="pupu" style="width: 20%;
+            ">
+              <ion-icon class="color"> Publicar</ion-icon>
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
   <div id="content">
     <div id="posts">
       <ion-card *ngFor="let post of posts">
