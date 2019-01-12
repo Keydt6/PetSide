@@ -2,10 +2,10 @@
 <ion-header>
   <ion-navbar class="letra">
     <ion-title>
-      <strong >PET SITE KS</strong> 
+      <strong>PET SITE</strong> 
     </ion-title>
     <ion-buttons end>
-      <button ion-button (click)="goToProfile()">
+      <button ion-button tappable (click)="goToProfile()">
         <ion-icon name="person"></ion-icon>
     </button>
       <button ion-button tappable (click)="presentNotifications($event)">
@@ -17,9 +17,9 @@
       <button ion-button tappable (click)="choosePlace('from')">
       <ion-icon name="search"></ion-icon>
       </button>
-      <!--<button ion-button tappable (click)="goToChat">
-        <ion-icon name="cog"></ion-icon>
-      </button> -->
+      <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>

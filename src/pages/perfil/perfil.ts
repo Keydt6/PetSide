@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { EdifProfilePage } from '../edit-profile/edit-profile';
+import {EditProfilePage} from "../edit-profile/edit-profile";
  
 /**
  * Generated class for the PerfilPage page.
@@ -64,6 +64,10 @@ export class PerfilPage {
     console.log('ionViewDidLoad PerfilPage');
   }
 
+  goToEditProfile() {
+    console.log('ionViewDidLoad edit-profile');
+    this.navCtrl.push(EditProfilePage);
+  }
 
 }
 

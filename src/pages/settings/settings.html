@@ -3,8 +3,8 @@
 
   <ion-navbar class="no-border">
     <ion-title>
-      <ion-icon name="cog" class="color"></ion-icon>
-      <span class="letra">Settings</span>
+      <ion-icon name="settings" class="color"></ion-icon>
+      <span class="letra">Configuraciones</span>
     </ion-title>
   </ion-navbar>
 
@@ -13,43 +13,32 @@
 <ion-content class="common-bg">
   <!-- User settings-->
   <ion-item-group class="letra">
-    <ion-item-divider class="bold, fondo">User Settings</ion-item-divider>
+    <ion-item-divider class="bold, fondo">Configuraciones de Usuario</ion-item-divider>
     <ion-item >
-      <ion-label class="letra" >Language</ion-label>
+      <ion-label class="letra" >Lenguaje</ion-label>
       <ion-select [(ngModel)]="language" class="letra" cancelText="Cancel" okText="OK">
         <ion-option value="en-US" selected="true">English (US)</ion-option>
-        <ion-option value="en-GB">English (UK)</ion-option>
-        <ion-option value="en-CA">English (CA)</ion-option>
-        <ion-option value="en-AU">English (AU)</ion-option>
-        <ion-option value="en-IN">English (IN)</ion-option>
-        <ion-option value="pt-BR">Portuguese (BR)</ion-option>
-        <ion-option value="pt-PT">Portuguese (PT)</ion-option>
-        <ion-option value="es-ES">Spanish (ES)</ion-option>
-        <ion-option value="es-AR">Spanish (AR)</ion-option>
-        <ion-option value="es-CO">Spanish (CO)</ion-option>
-        <ion-option value="es-CL">Spanish (CL)</ion-option>
-        <ion-option value="es-MX">Spanish (MX)</ion-option>
-        <ion-option value="zh-CN">Chinese (CN)</ion-option>
-        <ion-option value="zh-TW">Chinese (TW)</ion-option>
+        <ion-option value="en-GB">English</ion-option>
+        <ion-option value="es-ES">Spanish</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label class="letra" >Notifications?</ion-label>
+      <ion-label class="letra" >Notificaciones?</ion-label>
       <ion-toggle checked="true"></ion-toggle>
     </ion-item>
   </ion-item-group>
   <!-- App settings-->
   <ion-item-group class="letra" >
-    <ion-item-divider class="bold, fondo">App Settings</ion-item-divider>
+    <ion-item-divider class="bold, fondo">Agregar Configuraciones</ion-item-divider>
     <ion-item>
-      <span class="letra" >Clear Private Data</span>
+      <span class="letra" >Limpiar datos privados</span>
     </ion-item>
     <ion-item>
-      <ion-label class="letra" >Push Notifications?</ion-label>
+      <ion-label class="letra" >Notificaciones empujadas?</ion-label>
       <ion-toggle checked="false"></ion-toggle>
     </ion-item>
     <ion-item>
-      <span class="letra" >Privacy Policy</span>
+      <span class="letra" >Política deprivacidad</span>
     </ion-item>
   </ion-item-group>  
 

@@ -62,7 +62,7 @@ page-perfil {
         height: 100%;
         position: absolute;
         z-index: 0;
-        background: url(../assets/img/avatar/cosima-avatar.jpg)no-repeat center center/cover;
+        background: url(../assets/img/avatar/cosima-avatar.jpg) no-repeat center center/cover;
         opacity: 0.5;
         mix-blend-mode: lighten;
       }
@@ -200,7 +200,7 @@ page-perfil {
         background-repeat: no-repeat;
         background-position: 50% 20%;
 
-        text-align: center;
+        text-align: right;
       }
 
       #content {
@@ -218,14 +218,17 @@ page-perfil {
         z-index: 2;
         text-align: center;
       }
+
       #profile-name {
         color: #444;
         font-size: 26px;
       }
+
       #profile-description {
         font-size: 15px;
         color: #888;
       }
+
       #profile-description a {
         color: #888;
       }
@@ -238,6 +241,11 @@ page-perfil {
         height: 128px;
         margin: 30px auto 0;
         box-shadow: 0px 0px 4px rgba(0,0,0,0.7);
+      }
+
+      .icon-change {
+        top: 109px;
+        margin: 0px;
       }
 
       .list-item-content {
@@ -274,4 +282,5 @@ page-perfil {
         bottom: 5px;
         color: #888;
       }
+
 }

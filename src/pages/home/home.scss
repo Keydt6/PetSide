@@ -15,6 +15,7 @@ page-home,
     }
   }
 }
+
 .lc {
   font-family: sans-serif;
   color: #060605;
@@ -28,15 +29,18 @@ page-home,
   ion-content {
     background: linear-gradient(0deg, #eeeef1 0%, white 80%, white 100%);
   }
+
   button,
   ion-button,
   .button-md,
   .button-ios {
     text-transform: none !important;
   }
+
   p {
     color: #444;
   }
+
   // Cover image
   #profile-bg {
     position: absolute;
@@ -49,6 +53,7 @@ page-home,
     background-position: center;
     text-align: center;
   }
+
   // Profile content
   #content {
     position: relative;
@@ -56,6 +61,7 @@ page-home,
     padding-top: 200px;
     text-align: center;
   }
+
   #profile-image {
     display: block;
     border-radius: 50%;
@@ -64,6 +70,7 @@ page-home,
     margin: 0 auto 0;
     box-shadow: 0px 11px 20px -3px rgba(142, 136, 146, 0.75);
   }
+
   #profile-info {
     position: absolute;
     top: -95px;
@@ -71,14 +78,17 @@ page-home,
     z-index: 2;
     text-align: center;
   }
+
   #profile-name {
     color: #444;
     font-size: 26px;
   }
+
   .profile-description {
     font-size: 15px;
     color: #888;
   }
+
   .follow-button {
     text-transform: none;
     border-radius: 3px !important;
@@ -88,6 +98,7 @@ page-home,
       font-size: 2.5rem;
     }
   }
+
   // Following, Followers and all..
   .profile-numbers {
     p {
@@ -95,18 +106,21 @@ page-home,
       font-size: medium;
       margin-bottom: 3px;
     }
+
     span {
       font-weight: bold;
       font-size: 2.4rem;
       color: #34354c;
     }
   }
+
   hr {
     border: 0;
     height: 1px;
     background: #444;
     background: -webkit-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, rgb(188, 198, 214) 50%, hsla(0, 0%, 0%, 0) 100%);
   }
+  
   // Posts feed
   #posts {
     text-align: justify;

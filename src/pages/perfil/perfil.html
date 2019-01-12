@@ -10,6 +10,7 @@
     	<ion-title>Perfil</ion-title>
     </ion-navbar>
   </ion-header>
+
 <ion-content>
 
  <!-- 	
@@ -23,14 +24,18 @@
     
 -->
 
-	<div id="profile-bg" [ngStyle]="{'background-image': 'url(' + imageUrl +')'}"></div>
+	<div id="profile-bg" [ngStyle]="{'background-image': 'url(' + imageUrl +')'}">
+   <button class="icon-change" ion-button>
+      <ion-icon name="camera" > EDITAR</ion-icon>
+    </button>
+  </div>
  	<div id="content">
  		<div id="profile-info">
       		<img id="profile-image" src="../assets/img/profile/profile-2.jpg">
       		<h3 id="profile-name">John</h3>
       		<span id="profile-description">Traveler, geek and animal lover.</span>
       		<div>
-      			<button (click)="aa()">Editar Perfil</button>
+      			<button (click)="goToEditProfile()">Editar Perfil</button>
       		</div>
       		<div class="card-profile_user-stats">
       			<div class="stats-holder">

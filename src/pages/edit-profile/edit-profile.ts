@@ -30,13 +30,12 @@ export class EditProfilePage {
     return this.formBuilder.group({
       name: ['', Validators.required],
       lastName: ['', Validators.required],
+      sitioweb: ['', Validators.required],
+      biografia: ['', Validators.required],
       email: ['', Validators.required],
-      dateBirth: ['', Validators.required],
-      passwordRetry: this.formBuilder.group({
-        password: ['', Validators.required],
-        passwordConfirmation: ['', Validators.required]
-      }),
-      gender: ['', Validators.required],
+      direccion: ['', Validators.required],
+      telefono: ['', Validators.required],
+      sexo: ['', Validators.required],
     });
   }
 
