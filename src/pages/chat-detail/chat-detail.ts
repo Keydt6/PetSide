@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { ChatPage } from '../chat/chat';
+//import { ChatPage } from '../chat/chat';
 /**
  * Generated class for the ChatDetailPage page.
  *

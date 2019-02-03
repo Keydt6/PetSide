@@ -1,5 +1,9 @@
 import {Component} from "@angular/core";
-import {NavController, AlertController, ToastController, MenuController} from "ionic-angular";
+import { NavController, AlertController, LoadingController,
+        ToastController, MenuController} from "ionic-angular";
+//import { TranslateService } from '@ngx-translate/core';
+import { Storage } from '@ionic/storage';
+import { UserProvider } from '../../providers/user/user';
 import {HomePage} from "../home/home";
 import {RegisterPage} from "../register/register";
 
@@ -9,24 +13,126 @@ import {RegisterPage} from "../register/register";
 })
 export class LoginPage {
 
-  constructor(public nav: NavController, public forgotCtrl: AlertController, public menu: MenuController, public toastCtrl: ToastController) {
+  user = {
+    email: '',
+    password:'',
+    name: '',
+    surname: '',
+    websites: '',
+    biography: '',
+    direction: '',
+    gender: '',
+    countpublications: 0,
+    countFollowers:0,
+    countFollowing:0,
+    profilePicture: '',
+    coverPagePicture: ''
+  };
+
+  private email: string;
+  private password: string;
+  public loader: any;
+  
+  constructor(public navCtrl: NavController, 
+    public alertCtrl: AlertController,
+    private loadingCtrl: LoadingController,
+    public menu: MenuController, 
+    public toastCtrl: ToastController,
+    public userProvider: UserProvider,
+    public storage: Storage
+    //private translateService: TranslateService
+    ) {
     this.menu.swipeEnable(false);
+    
+    this.email = '';
+    this.password = '';
   }
 
   // go to register page
   register() {
-    this.nav.setRoot(RegisterPage);
+    this.navCtrl.setRoot(RegisterPage);
   }
 
   // login and go to home page
   login() {
-    this.nav.setRoot(HomePage);
+    console.log(this.email);
+    console.log(this.password);
+
+    this.loader = this.loadingCtrl.create({
+        content: 'Loanding...'
+      });
+    this.loader.present();
+
+    if(this.email != '' && this.password != '') {
+      this.userProvider.loginUser(this.email, this.password)
+      .subscribe( data => {
+          console.log(data);
+          if(data){
+            this.storage.set('user', JSON.stringify(data['items']));
+            this.loader.dismiss();            
+            this.navCtrl.setRoot(HomePage);
+            this.presentToast();
+          } 
+        }, error => {
+          console.log(error);
+          if(error.status==404)
+            this.presentAlert();
+          else
+            this.presentAlertConex();
+            this.loader.dismiss();
+          });
+    } else {
+      console.log("Ingresar Email y Password.");
+      this.presentVoidAlert();
+      this.loader.dismiss();
+    }
+
+    //this.navCtrl.setRoot(HomePage);
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Bienvenido a petSide',
+      duration: 3000,
+      position: 'top',
+      //cssClass: 'dark-trans',
+      closeButtonText: 'OK',
+      showCloseButton: true
+    });
+    toast.present();
+  }
+
+  presentAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Datos Incorrectos',
+      subTitle: 'Email o Password es incorrecto',
+      buttons: ['Try Again']
+    });
+    alert.present();
+  }
+
+  presentVoidAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Completar Datos',
+      subTitle: 'Debe Introducir Email y Password',
+      buttons: ['Try Again']
+    });
+    alert.present();
+  }
+
+  presentAlertConex() {
+    let alert = this.alertCtrl.create({
+      title: 'Error de Conexión',
+      subTitle: 'Verifique su Conexión a internet',
+      buttons: ['Try Again']
+    });
+    alert.present();
   }
 
   forgotPass() {
-    let forgot = this.forgotCtrl.create({
-      title: 'Forgot Password?',
-      message: "Enter you email address to send a reset link password.",
+    let forgot = this.alertCtrl.create({
+      title: 'Olvidaste tu Password?',
+      message: "Ingresa tu dirección de correo para enviar un enlace de reinicio de password.",
       inputs: [
         {
           name: 'email',
@@ -42,11 +148,11 @@ export class LoginPage {
           }
         },
         {
-          text: 'Send',
+          text: 'Enviar',
           handler: data => {
             console.log('Send clicked');
             let toast = this.toastCtrl.create({
-              message: 'Email was sended successfully',
+              message: 'Email enviado con exito',
               duration: 3000,
               position: 'top',
               cssClass: 'dark-trans',

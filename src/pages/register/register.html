@@ -11,13 +11,18 @@
     </div>
 
     <!-- Login form -->
-    <form class="list-form, letra">
+    <form [formGroup]="formRegistro" class="list-form, letra">
       <ion-item>
         <ion-label floating>
           <ion-icon name="person" item-start class="color"></ion-icon>
-          Full Name
+          Nombre
         </ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input formControlName="name" type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formRegistro.get('name').errors && formRegistro.get('name').dirty">
+        <p color="danger" ion-text *ngIf="formRegistro.get('name').hasError('required')">Indique su Nombre</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('name').hasError('maxLength')">Máximo 30 caracteres</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('name').hasError('pattern')"> Escriba su Nombre solo con letras</p>
       </ion-item>
 
       <ion-item>
@@ -25,7 +30,13 @@
           <ion-icon name="mail" item-start class="color"></ion-icon>
           Email
         </ion-label>
-        <ion-input type="email"></ion-input>
+        <ion-input formControlName="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formRegistro.get('email').errors && formRegistro.get('email').dirty">
+        <p color="danger" ion-text *ngIf="formRegistro.get('email').hasError('required')">Indique su Email</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('email').hasError('maxLength')">Máximo 30 caracteres</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('email').hasError('pattern')">Formato de Email invalido</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('email').hasError('pattern')">Siga este ejemplo: 'ejemplo@email.com'</p>
       </ion-item>
 
       <ion-item>
@@ -33,15 +44,34 @@
           <ion-icon name="lock" item-start class="color"></ion-icon>
           Password
         </ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-input formControlName="password" type="password" value=""></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formRegistro.get('password').errors && formRegistro.get('password').dirty">
+        <p color="danger" ion-text *ngIf="formRegistro.get('password').hasError('required')">Indique un Password</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('password').hasError('minlength')">Minimo 8 caracteres</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('password').hasError('maxLength')">Maximo 10 caracteres</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('password').hasError('pattern')"> Solo puedes usar estos caracteres especiales: _ . * $ # - % /</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="color"></ion-icon>
+          Comfirmar Password
+        </ion-label>
+        <ion-input formControlName="passconfirm" type="password" value=""></ion-input>
+      </ion-item>
+      <ion-item *ngIf="formRegistro.get('passconfirm').errors && formRegistro.get('passconfirm').dirty">
+        <p color="danger" ion-text *ngIf="formRegistro.get('passconfirm').hasError('required')">Confirme su Password</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('passconfirm').hasError('minlength')">Minimo 8 caracteres</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('passconfirm').hasError('maxLength')">Maximo 10 caracteres</p>
+        <p color="danger" ion-text *ngIf="formRegistro.get('passconfirm').hasError('pattern')"> Solo puedes usar estos caracteres especiales en tu Password: _ . * $ # - % /</p>
       </ion-item>
     </form>
 
     <div margin-top>
-      <button ion-button block class="fondo" tappable (click)="register()">
-        SIGN UP
-      </button>
+      <button ion-button block class="fondo" tappable (click)="register()"> Registrar </button>
 
+      <!-->
       <p text-center ion-text class="letra">Or Sign Up with:</p>
 
       <ion-grid>
@@ -63,11 +93,12 @@
           </ion-col>
         </ion-row>
       </ion-grid>
+      <-->
     </div>
 
     <!-- Other links -->
     <div text-center margin-top>
-      <span ion-text class="letra" tappable (click)="login()">I have an account</span>
+      <span ion-text class="letra" tappable (click)="login()">Tengo una cuanta registrada.</span>
     </div>
 
   </div>

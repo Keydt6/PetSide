@@ -1,7 +1,10 @@
 import {NgModule} from "@angular/core";
 import {IonicApp, IonicModule} from "ionic-angular";
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClient, HttpClientModule} from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import {IonicStorageModule} from '@ionic/storage';
 
 import {StatusBar} from '@ionic-native/status-bar';
@@ -32,7 +35,12 @@ import {ChatPage} from "../pages/chat/chat";
 import {ChatDetailPage} from "../pages/chat-detail/chat-detail";
 //>>>>>>> 63d08064d8665d842ebf70e117d07884e6c1c719
 import {PerfilPage} from "../pages/perfil/perfil";
+import { UserProvider } from '../providers/user/user';
+import { PublicacionProvider } from '../providers/publicacion/publicacion';
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
+}
 // import services
 // end import services
 // end import services
@@ -62,6 +70,7 @@ import {PerfilPage} from "../pages/perfil/perfil";
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp, {
       scrollPadding: false,
       scrollAssist: true,
@@ -70,6 +79,13 @@ import {PerfilPage} from "../pages/perfil/perfil";
     IonicStorageModule.forRoot({
       name: '__ionic3_start_theme',
         driverOrder: ['indexeddb', 'sqlite', 'websql']
+    }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
     })
   ],
   bootstrap: [IonicApp],
@@ -97,7 +113,9 @@ import {PerfilPage} from "../pages/perfil/perfil";
     Keyboard,
     ActivityService,
     TripService,
-    WeatherProvider
+    WeatherProvider,
+    UserProvider,
+    PublicacionProvider
   ]
 })
 
