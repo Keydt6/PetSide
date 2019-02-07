@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class UserProvider {
 
-	urlServer: String = 'http://localhost:3000/PetSide/';
+	urlServer: String = 'http://localhost:3001/PetSide/';
 
   constructor(public http: Http) {
     console.log('Hello UserProvider Provider');
@@ -59,7 +59,7 @@ export class UserProvider {
           reject(err);
         });
     });
-}
+  }
 
   editUser(data) {
     var body = {"user": data};

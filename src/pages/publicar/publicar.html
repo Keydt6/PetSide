@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Publicar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<form [formGroup]="publicationForm" class="list-form, letra">
+		<ion-item item-start class="color">
+        	<ion-label floating>
+        		<ion-icon name="create" item-start class="color"></ion-icon>
+          		Di lo que estas pensando!
+        	</ion-label>
+        	<ion-textarea formControlName="description" maxlength=300 ></ion-textarea>
+      	</ion-item>
+      	<ion-item *ngIf="publicationForm.get('description').errors && publicationForm.get('description').dirty">
+        	<p color="danger" ion-text *ngIf="publicationForm.get('description').hasError('required')">Debes escribir algo</p>
+        	<p color="danger" ion-text *ngIf="publicationForm.get('description').hasError('maxLength')">Máximo 300 caracteres</p>
+        	<p color="danger" ion-text *ngIf="publicationForm.get('description').hasError('pattern')"> No escribas caracteres especiales</p>
+      	</ion-item>
+    </form>
+
+    <div margin-top>
+      <button ion-button block class="fondo" tappable (click)="publicar()"> Publicar </button>
+  	</div>
+</ion-content>

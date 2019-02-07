@@ -16,6 +16,8 @@ import {EditProfilePage} from "../edit-profile/edit-profile";
 })
 export class PerfilPage {
 
+
+  public publicaciones: any;
 	posts = [
     {
       postImageUrl: 'assets/img/background/background-2.jpg',
@@ -58,10 +60,12 @@ export class PerfilPage {
 	imageUrl: string = '/assets/img/profile/profile-cover.jpg';
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.publicaciones = [];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerfilPage');
+    //
   }
 
   goToEditProfile() {

@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NavController, PopoverController} from "ionic-angular";
+import {NavController, NavParams, PopoverController} from "ionic-angular";
 import {Storage} from '@ionic/storage';
 
 //import { ToastService } from '/providers/util/toast.service';
@@ -10,6 +10,7 @@ import {TripsPage} from "../trips/trips";
 import {SearchLocationPage} from "../search-location/search-location";
 import {ChatPage} from "../chat/chat";
 import {PerfilPage} from "../perfil/perfil";
+import { PublicarPage } from "../publicar/publicar";
 
 @Component({
   selector: 'page-home',
@@ -23,7 +24,8 @@ export class HomePage {
     date: new Date().toISOString()
   }
 
-following = false;
+
+  following = false;
   user = {
     name: 'Paula Bolliger',
     profileImage: 'assets/img/avatar/girl-avatar.png',
@@ -63,8 +65,13 @@ following = false;
     },
   ];
 
-  constructor(private storage: Storage, public nav: NavController, 
-    public popoverCtrl: PopoverController /*, public toastCtrl: ToastService*/ ) {
+  public User: any = [];
+  constructor(
+    private storage: Storage,
+    public nav: NavController,
+    public navParams: NavParams,
+    public popoverCtrl: PopoverController) {
+
   }
 
   ionViewWillEnter() {
@@ -117,6 +124,14 @@ following = false;
   goToEditProfile(){
     
   }
+
+  goToPublicar() {
+    console.log('goToPublicar');
+    this.nav.push(PublicarPage);
+  }
+
+
+
 
 /*
   //publicaciones

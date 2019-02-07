@@ -37,6 +37,7 @@ import {ChatDetailPage} from "../pages/chat-detail/chat-detail";
 import {PerfilPage} from "../pages/perfil/perfil";
 import { UserProvider } from '../providers/user/user';
 import { PublicacionProvider } from '../providers/publicacion/publicacion';
+import { PublicarPage } from '../pages/publicar/publicar';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -65,7 +66,8 @@ export function createTranslateLoader(http: HttpClient) {
     TripDetailPage,
     TripsPage,
     EditProfilePage,
-    PerfilPage
+    PerfilPage,
+    PublicarPage
   ],
   imports: [
     BrowserModule,
@@ -105,7 +107,8 @@ export function createTranslateLoader(http: HttpClient) {
     TripDetailPage,
     TripsPage,
     EditProfilePage,
-    PerfilPage
+    PerfilPage,
+    PublicarPage
   ],
   providers: [
     StatusBar,

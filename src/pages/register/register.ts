@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { Storage } from '@ionic/storage';
 import { UserProvider } from '../../providers/user/user';
 import {LoginPage} from "../login/login";
-import {EditProfilePage} from "../edit-profile/edit-profile";
+//import {EditProfilePage} from "../edit-profile/edit-profile";
 import {HomePage} from "../home/home";
 
 
@@ -35,8 +35,6 @@ export class RegisterPage {
   private passConfirm: string;
   private name: string;
   public formRegistro: FormGroup;
-
-
   public loader: any;
 
   constructor(
@@ -74,8 +72,8 @@ export class RegisterPage {
     if(this.formRegistro.valid) {
       console.log('Valido');
       console.log(this.formRegistro.value);
-      console.log(this.formRegistro.email);
-      this.userProvider.getUserByEmail(this.formRegistro.email).subscribe((result) => {
+      console.log(this.formRegistro.value.email);
+      this.userProvider.getUserByEmail(this.formRegistro.value.email).subscribe((result) => {
         console.log('result');
         console.log(result.toString());
         this.presentAlert('Lo sentimos', 'Este Email se encuentra registrado');   
@@ -89,7 +87,8 @@ export class RegisterPage {
             console.log(result.toString());
             this.presentAlert('Registro', 'Te has registrado con exito');
             this.loader.dismiss();
-            this.storage.set('userReg', data);
+            this.storage.set('usuario', data);
+            localStorage.setItem('usuario', JSON.stringify(data));
             this.nav.setRoot(HomePage, { userReg: data });
           }, (err) => {
             console.log('err');

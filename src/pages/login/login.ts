@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import { NavController, AlertController, LoadingController,
+import { NavController, NavParams, AlertController, LoadingController,
         ToastController, MenuController} from "ionic-angular";
 //import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
@@ -32,8 +32,12 @@ export class LoginPage {
   private email: string;
   private password: string;
   public loader: any;
+  public User: any;
+  public User2: any;
   
-  constructor(public navCtrl: NavController, 
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
     public alertCtrl: AlertController,
     private loadingCtrl: LoadingController,
     public menu: MenuController, 
@@ -46,6 +50,8 @@ export class LoginPage {
     
     this.email = '';
     this.password = '';
+    this.User = [];
+    this.User2 = [];
   }
 
   // go to register page
@@ -66,10 +72,13 @@ export class LoginPage {
     if(this.email != '' && this.password != '') {
       this.userProvider.loginUser(this.email, this.password)
       .subscribe( data => {
+          console.log('data');
           console.log(data);
           if(data){
-            this.storage.set('user', JSON.stringify(data['items']));
-            this.loader.dismiss();            
+            this.User = data;
+            this.loader.dismiss();
+            localStorage.setItem('usuario', JSON.stringify(data));
+            this.storage.set('usuario', JSON.stringify(data));
             this.navCtrl.setRoot(HomePage);
             this.presentToast();
           } 
@@ -79,15 +88,13 @@ export class LoginPage {
             this.presentAlert();
           else
             this.presentAlertConex();
-            this.loader.dismiss();
-          });
+          this.loader.dismiss();
+        });
     } else {
       console.log("Ingresar Email y Password.");
       this.presentVoidAlert();
       this.loader.dismiss();
     }
-
-    //this.navCtrl.setRoot(HomePage);
   }
 
   presentToast() {
