@@ -82,18 +82,6 @@ export class PerfilPage {
     this.userDetail = [];
   }   
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PerfilPage');
-    this.publProvider.getpublicationsUser(this.user._id, this.user._id)
-    .then((result) => {
-      console.log(result);
-      this.listPosts= result.JSON();
-    }, (err) => {
-      console.log(err);
-    });
-    this.listPosts;
-  }
-
   ionViewWillEnter() {
     console.log('ionViewWillEnter PerfilPage');
     this.userDetail = JSON.parse(localStorage.getItem('usuario'));
@@ -108,7 +96,14 @@ export class PerfilPage {
     this.following = Number(this.perfil.countFollowing);
     this.followers = Number(this.perfil.countFollowers);
     this.id = this.perfil._id;
-    }
+
+    this.publProvider.getpublicationsUser()
+    .subscribe(publicaciones => {
+      publicaciones = publicaciones.json();
+      this.listPosts = publicaciones.publications;
+      console.log(this.listPosts);
+    }); 
+  }
 
     deleteUser() {
       /*this.presentAlertConfirm('Eliminar Cuenta', '¿Esta seguro de eliminar su cuenta?')

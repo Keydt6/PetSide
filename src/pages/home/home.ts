@@ -11,6 +11,7 @@ import {SearchLocationPage} from "../search-location/search-location";
 import {ChatPage} from "../chat/chat";
 import {PerfilPage} from "../perfil/perfil";
 import { PublicarPage } from "../publicar/publicar";
+import { PublicacionProvider } from '../../providers/publicacion/publicacion';
 
 @Component({
   selector: 'page-home',
@@ -66,17 +67,19 @@ export class HomePage {
   ];
 
   public User: any = [];
+  public listPosts: any;
   constructor(
     private storage: Storage,
     public nav: NavController,
     public navParams: NavParams,
-    public popoverCtrl: PopoverController) {
+    public popoverCtrl: PopoverController,
+    public publProvider: PublicacionProvider) {
 
+    this.listPosts = [];
   }
 
   ionViewWillEnter() {
-    // this.search.pickup = "Luis Gomez";
-    // this.search.dropOff = "Same as pickup";
+    console.log('ionViewWillEnter HomePage');
     this.storage.get('pickup').then((val) => {
       if (val === null) {
         this.search.name = "Luis Gomez"
@@ -86,6 +89,13 @@ export class HomePage {
     }).catch((err) => {
       console.log(err)
     });
+
+    this.publProvider.getpublications()
+    .subscribe(publicaciones => {
+      publicaciones = publicaciones.json();
+      this.listPosts = publicaciones.publications;
+      console.log(this.listPosts);
+    });  
   }
 
   // go to result page

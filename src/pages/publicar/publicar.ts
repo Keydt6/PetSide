@@ -32,7 +32,7 @@ export class PublicarPage {
   	public pubProvider: PublicacionProvider) {
 
   	this.publicationForm = this.form.group({
-      description: ['', Validators.compose([Validators.maxLength(300), Validators.pattern('[a-zA-Z0-9_.,¿?!¡-"_ ]*'), Validators.required])]
+      description: ['', Validators.compose([Validators.maxLength(300), Validators.pattern('[a-zA-Z0-9_.*$#-%/@!¡¿? ]*'), Validators.required])]
     })
 
     this.loader = this.loadingCtrl.create({

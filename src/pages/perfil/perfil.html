@@ -45,18 +45,19 @@
       </div>
     </div>
 
+    <!-- posts -->
     <div id="posts">
-      <ion-card *ngFor="let post of posts">
+      <ion-card *ngFor="let post of listPosts">
         <ion-item>
           <ion-avatar item-start>
             <img [src]="user.profileImage">
           </ion-avatar>
-          <h2 class="sticky">{{user.name}}</h2>
-          <p>{{post.date}}</p>
+          <h2 class="sticky">{{post.userId.name + ' ' + post.userId.surname}}</h2>
+          <!-- <p>{{post.date}}</p> -->
         </ion-item>
-        <img [src]="post.postImageUrl" (click)="imageTapped(post)">
+        <!-- <img [src]="post.postImageUrl" (click)="imageTapped(post)"> -->
         <ion-card-content>
-          <p>{{post.text}}</p>
+          <p>{{post.description}}</p>
         </ion-card-content>
         <ion-row>
           <ion-col>
