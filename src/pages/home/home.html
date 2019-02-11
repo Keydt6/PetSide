@@ -26,18 +26,12 @@
 
 //Aquí va el home
 <ion-content padding class="transparent-header">
-  
-  <div>
-    <div id="content">
-      <div id="posts">
-        <div class="pu">
-            <div class="pupu" style="width: 20%;
-            ">
-              <ion-icon name="paw" class="color" (click)="goToPublicar()"> Publicar</ion-icon>
-            </div>
-         </div>
-      </div>
-    </div>
+
+  <div style="text-align: center">
+      <button ion-button icon-start round class="color, letra, fondo" tappable (click)="goToPublicar()">
+        <ion-icon name="paw"></ion-icon>
+        Publicar
+      </button>
   </div>
 
   <div id="content">

@@ -33,9 +33,20 @@ export class PublicacionProvider {
     console.log('perfil');
     console.log(this.perfil);
     console.log('name');
-    console.log(this.perfil.nombre);
-    return new Promise((resolve, reject) => {//+ this.perfil._id
+    console.log(this.perfil.name);
+    return new Promise((resolve, reject) => {
       this.http.post(this.urlServer + 'savePublication/' + this.perfil._id, publicacion, headers)
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  getpublicationsUser(idUser){
+    return new Promise((resolve, reject) => {
+      this.http.get(this.urlServer + 'findPublicationsByUser/' + idUser)
         .subscribe(res => {
           resolve(res);
         }, (err) => {

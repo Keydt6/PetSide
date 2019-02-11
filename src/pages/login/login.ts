@@ -39,9 +39,9 @@ export class LoginPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     public alertCtrl: AlertController,
-    private loadingCtrl: LoadingController,
-    public menu: MenuController, 
     public toastCtrl: ToastController,
+    private loadingCtrl: LoadingController,
+    public menu: MenuController,
     public userProvider: UserProvider,
     public storage: Storage
     //private translateService: TranslateService
@@ -72,6 +72,7 @@ export class LoginPage {
     if(this.email != '' && this.password != '') {
       this.userProvider.loginUser(this.email, this.password)
       .subscribe( data => {
+          data  = data.json();
           console.log('data');
           console.log(data);
           if(data){

@@ -1,61 +1,88 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Editar Perfil</ion-title>
+    <!--
     <ion-buttons end>
       <button ion-button tappable>
         <ion-icon name="checkmark-circle-outline"></ion-icon>
     </button>
-  </ion-buttons>
+    </ion-buttons>
+    -->
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-
+  <!--
   <div id="profile-info">
     <img id="profile-image" src="../assets/img/profile/profile-2.jpg">
     <div>
       <button>Cambiar imagen</button>
     </div>
   </div>
+  -->
 
-  <form [formGroup]="myForm" (ngSubmit)="saveData()">
+  <form [formGroup]="myForm">
     <ion-list>
       <ion-item>
         <ion-icon name="person" item-start class="color"></ion-icon>
         <ion-label stacked>Nombres:</ion-label>
         <ion-input formControlName="name" type="text" placeholder="Nombre"></ion-input>
       </ion-item>
+      <ion-item *ngIf="myForm.get('name').errors && myForm.get('name').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('name').hasError('required')">Debe indicar su nombre</p>
+        <p color="danger" ion-text *ngIf="myForm.get('name').hasError('maxLength')">Maximo 30 caracteres</p>
+        <p color="danger" ion-text *ngIf="myForm.get('name').hasError('pattern')"> Solo puedes usar letras</p>
+      </ion-item>
+
       <ion-item>
         <ion-icon name="person" item-start class="color"></ion-icon>
         <ion-label stacked>Apellidos:</ion-label>
-        <ion-input formControlName="lastName" type="text" placeholder="Apellido"></ion-input>
+        <ion-input formControlName="surname" type="text" placeholder="Apellido"></ion-input>
       </ion-item>
+      <ion-item *ngIf="myForm.get('surname').errors && myForm.get('surname').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('surname').hasError('required')">Debe indicar su apellido</p>
+        <p color="danger" ion-text *ngIf="myForm.get('surname').hasError('maxLength')">Maximo 30 caracteres</p>
+        <p color="danger" ion-text *ngIf="myForm.get('surname').hasError('pattern')"> Solo puedes usar letras</p>
+      </ion-item>
+
       <ion-item>
         <ion-icon name="at" item-start class="color"></ion-icon>
         <ion-label stacked>Sitios Web:</ion-label>
-        <ion-input formControlName="sitioweb" type="text" placeholder="..."></ion-input>
+        <ion-input formControlName="websites" type="text" placeholder="..."></ion-input>
       </ion-item>
+      <ion-item *ngIf="myForm.get('websites').errors && myForm.get('websites').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('websites').hasError('maxLength')">Maximo 30 caracteres</p>
+      </ion-item>
+
       <ion-item>
         <ion-icon name="book" item-start class="color"></ion-icon>
         <ion-label stacked>Biografía:</ion-label>
-        <ion-input formControlName="biografia" type="text" placeholder="Acerca de mi"></ion-input>
+        <ion-input formControlName="biography" type="text" placeholder="Acerca de mi"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-icon name="mail" item-start class="color"></ion-icon>
-        <ion-label stacked>Correo electronico:</ion-label>
-        <ion-input formControlName="email" type="email" placeholder="ejemplo@email.com"></ion-input>
+      <ion-item *ngIf="myForm.get('biography').errors && myForm.get('biography').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('biography').hasError('maxLength')">Maximo 60 caracteres</p>
       </ion-item>
+
       <ion-item>
         <ion-icon name="card" item-start class="color"></ion-icon>
         <ion-label stacked>Dirección:</ion-label>
-        <ion-input formControlName="direccion" type="text" placeholder="De dónde eres"></ion-input>
+        <ion-input formControlName="direction" type="text" placeholder="De dónde eres"></ion-input>
       </ion-item>
+      <ion-item *ngIf="myForm.get('direction').errors && myForm.get('direction').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('direction').hasError('maxLength')">Maximo 30 caracteres</p>
+      </ion-item>
+
       <ion-item>
         <ion-icon name="call" item-start class="color"></ion-icon>
         <ion-label stacked>Telefono:</ion-label>
-        <ion-input formControlName="telefono" type="text" placeholder="Mi número"></ion-input>
+        <ion-input formControlName="number" type="text" placeholder="Mi número"></ion-input>
       </ion-item>
-      <ion-row radio-group formControlName="sexo">
+      <ion-item *ngIf="myForm.get('number').errors && myForm.get('number').dirty">
+        <p color="danger" ion-text *ngIf="myForm.get('number').hasError('pattern')"> Solo puedes usar numeros</p>
+        <p color="danger" ion-text *ngIf="myForm.get('number').hasError('maxLength')">Maximo 11 numeros</p>
+      </ion-item>
+
+      <ion-row radio-group formControlName="gender">
         <ion-col>
           <ion-item>
             <ion-icon name="woman" item-start class="color"></ion-icon>
@@ -71,9 +98,12 @@
           </ion-item>
         </ion-col>
       </ion-row>
+      <ion-item *ngIf="myForm.get('gender').errors && myForm.get('gender').dirty">
+         <p color="danger" ion-text *ngIf="myForm.get('gender').hasError('required')">Debe indicar su sexo</p>
+      </ion-item>
     </ion-list>
     <div padding>
-      <button ion-button block class="color" type="submit" [disabled]="!myForm.valid">Guardar</button>
+      <button ion-button block class="color" type="submit" (click)="saveData()">Guardar cambios</button>
     </div>
   </form>
 </ion-content>

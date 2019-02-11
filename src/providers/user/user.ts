@@ -61,11 +61,23 @@ export class UserProvider {
     });
   }
 
-  editUser(data) {
-    var body = {"user": data};
+  editUser(id, data) {
+    var body = {"usuario": data};
     console.log(body);
     return new Promise((resolve, reject) => {
-      this.http.post(this.urlServer+'user/updateUser/', body)
+      this.http.put(this.urlServer + 'updateUser/' + id, data)
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
+
+  deleteUser(id){
+    console.log(id);
+    return new Promise((resolve, reject) => {
+      this.http.delete(this.urlServer+'deleteUser/' + id)
         .subscribe(res => {
           resolve(res);
         }, (err) => {

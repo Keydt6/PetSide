@@ -11,7 +11,7 @@
     </div>
 
     <!-- Login form -->
-    <form [formGroup]="formRegistro" class="list-form, letra">
+    <form [formGroup]="formRegistro" class="list-form, letra" (ngSubmit)="register()">
       <ion-item>
         <ion-label floating>
           <ion-icon name="person" item-start class="color"></ion-icon>
@@ -66,40 +66,37 @@
         <p color="danger" ion-text *ngIf="formRegistro.get('passconfirm').hasError('maxLength')">Maximo 10 caracteres</p>
         <p color="danger" ion-text *ngIf="formRegistro.get('passconfirm').hasError('pattern')"> Solo puedes usar estos caracteres especiales en tu Password: _ . * $ # - % /</p>
       </ion-item>
+      <div margin-top>
+        <button ion-button block class="fondo" tappable type="submit" [disabled]="!formRegistro.valid"> Registrar </button>
+      </div>
     </form>
 
-    <div margin-top>
-      <button ion-button block class="fondo" tappable (click)="register()"> Registrar </button>
-
-      <!-->
-      <p text-center ion-text class="letra">Or Sign Up with:</p>
-
-      <ion-grid>
-        <ion-row>
-          <ion-col col-4>
-            <button ion-button icon-only block class="btn-facebook">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col col-4>
-            <button ion-button icon-only block class="btn-twitter">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col col-4>
-            <button ion-button icon-only block class="btn-gplus">
-              <ion-icon name="logo-googleplus"></ion-icon>
-            </button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <-->
-    </div>
-
+    <!--
+    <p text-center ion-text class="letra">Or Sign Up with:</p>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button icon-only block class="btn-facebook">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-only block class="btn-twitter">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-only block class="btn-gplus">
+            <ion-icon name="logo-googleplus"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    -->
+    
     <!-- Other links -->
     <div text-center margin-top>
       <span ion-text class="letra" tappable (click)="login()">Tengo una cuanta registrada.</span>
     </div>
-
   </div>
 </ion-content>

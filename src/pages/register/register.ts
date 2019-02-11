@@ -4,9 +4,6 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { Storage } from '@ionic/storage';
 import { UserProvider } from '../../providers/user/user';
 import {LoginPage} from "../login/login";
-//import {EditProfilePage} from "../edit-profile/edit-profile";
-import {HomePage} from "../home/home";
-
 
 @Component({
   selector: 'page-register',
@@ -42,8 +39,8 @@ export class RegisterPage {
     public navParams: NavParams,
     public storage: Storage,
     private loadingCtrl: LoadingController,
-    public form: FormBuilder,
     public alertCtrl: AlertController,
+    public form: FormBuilder,
     public userProvider: UserProvider) {
 
     this.name = '';
@@ -89,7 +86,7 @@ export class RegisterPage {
             this.loader.dismiss();
             this.storage.set('usuario', data);
             localStorage.setItem('usuario', JSON.stringify(data));
-            this.nav.setRoot(HomePage, { userReg: data });
+            this.nav.setRoot(LoginPage);
           }, (err) => {
             console.log('err');
             console.log(err);

@@ -37,8 +37,23 @@ page-perfil {
     font-family: 'ProximaNova-Regular', Helvetica neue, sans-serif;
   }
 
+  .letra {
+    font-family: serif;
+    font-weight: 400;
+    color: #060605;
+  }
+
+  .color{
+    color: #060605;
+    }
+    
+  .fondo{
+    
+    background-color: #060605;
+  }
+
   #posts {
-    margin-top: 20vh;
+    margin-top: 30vh;
   }
 
   .container {

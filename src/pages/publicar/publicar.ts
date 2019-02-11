@@ -32,19 +32,17 @@ export class PublicarPage {
   	public pubProvider: PublicacionProvider) {
 
   	this.publicationForm = this.form.group({
-      description: ['', Validators.compose([Validators.maxLength(300), Validators.pattern('[a-zA-Z0-9_., ]*'), Validators.required])]
+      description: ['', Validators.compose([Validators.maxLength(300), Validators.pattern('[a-zA-Z0-9_.,¿?!¡-"_ ]*'), Validators.required])]
     })
 
     this.loader = this.loadingCtrl.create({
-        content: 'Please wait...'
+        content: 'Publicando...'
     });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PublicarPage');
   }
-
-
 
   publicar() {
   	console.log('publicar');
@@ -75,7 +73,7 @@ export class PublicarPage {
     let alert = this.alertCtrl.create({
       title: t,
       subTitle: s,
-      buttons: ['Try Again']
+      buttons: ['Ok']
     });
     alert.present();
   }	
