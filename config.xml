@@ -92,4 +92,5 @@
     <plugin name="cordova-sqlite-storage" spec="~2.1.4" />
     <plugin name="cordova-plugin-console" spec="^1.1.0" />
     <plugin name="cordova-plugin-device" spec="^1.1.7" />
+    <plugin name="cordova-plugin-camera" spec="4.0.3" />
 </widget>

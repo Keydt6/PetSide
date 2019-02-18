@@ -4,6 +4,11 @@ import { FormGroup } from '@angular/forms/src/model';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Storage } from '@ionic/storage';
 import { PublicacionProvider } from '../../providers/publicacion/publicacion';
+/*
+import { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview';
+import { Crop } from '@ionic-native/crop';
+import { Camera } from '@ionic-native/camera';
+*/
 
 /**
  * Generated class for the PublicarPage page.
@@ -29,7 +34,12 @@ export class PublicarPage {
   	public alertCtrl: AlertController,
   	private loadingCtrl: LoadingController,
   	public storage: Storage,
-  	public pubProvider: PublicacionProvider) {
+  	public pubProvider: PublicacionProvider
+    /*private cameraPreview: CameraPreview,
+      public crop: Crop,
+      public camera: Camera,
+      */
+    ) {
 
   	this.publicationForm = this.form.group({
       description: ['', Validators.compose([Validators.maxLength(300), Validators.pattern('[a-zA-Z0-9_.*$#-%/@!¡¿? ]*'), Validators.required])]
@@ -77,4 +87,41 @@ export class PublicarPage {
     });
     alert.present();
   }	
+
+  // Acceder a Galería con el plugin nativo camera
+ /*accessGallery(){
+   let option = {
+      quality:100,
+      targetHeight: window.screen.width,
+      targetWidth: window.screen.width,
+    };
+
+   this.camera.getPicture({ 
+     sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+     destinationType: this.camera.DestinationType.FILE_URI,
+      correctOrientation: true,
+      encodingType: this.camera.EncodingType.JPEG
+    }).then((imageData) => {
+      this.crop.crop(imageData, option).then(newImageUrl => {
+        let image = new Image();
+        let canvas = document.createElement('canvas');
+        let ctx = canvas.getContext('2d');
+        image.src = newImageUrl;
+        image.onload = () => {
+          canvas.width = image.width;
+          canvas.height = image.width;
+          ctx.drawImage(image,
+              0, 0,           
+              image.width, image.height,    
+              0, 0,                               
+              image.width, image.height);
+          let cropped_img_base64 = canvas.toDataURL();
+          this.navCtrl.push('publicationRegisterPage',{ photo: cropped_img_base64 },
+          {animate: true, direction: 'forward'});
+        }
+      }, error => alert(error));
+     }, (err) => {
+      alert(err);
+    });
+  }Ç*/
 }

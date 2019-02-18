@@ -1,9 +1,5 @@
-<!--
-  Generated template for the PerfilPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+<script src="node_modules/angular-moment/angular-moment.js"></script>
+<script src="node_modules/moment/moment.js"></script>
 
 <ion-header>
   <ion-navbar>
@@ -73,9 +69,7 @@
               </button>
           </ion-col>
           <ion-col align-self-center text-center>
-            <p>
-              {{post.timestamp}}
-            </p>
+            <span am-time-ago="post.creationDate | amFromUnix">{{post.creationDate}}</span>
           </ion-col>
         </ion-row>
       </ion-card>

@@ -115,7 +115,7 @@ export class RegisterPage {
       let alert = this.alertCtrl.create({
         title: t,
         subTitle: s,
-        buttons: ['Try Again']
+        buttons: ['Intentar de nuevo']
       });
       alert.present();
   }

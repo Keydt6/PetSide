@@ -16,7 +16,8 @@ import { PublicacionProvider } from '../../providers/publicacion/publicacion';
 @Component({
   selector: 'page-perfil',
   templateUrl: 'perfil.html',
-})
+  })
+
 export class PerfilPage {
 
   public userDetail: any;

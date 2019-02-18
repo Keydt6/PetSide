@@ -12,7 +12,7 @@ export class EditProfilePage {
 	public myForm: FormGroup;
   public loader: any;
   public usuario: any;
-  public updateUser: any;
+  public userDetail: any;
   public id: string;
 
   constructor(
@@ -56,8 +56,6 @@ export class EditProfilePage {
     auxPerfil.surname = this.myForm.value.surname;
     auxPerfil.websites = this.myForm.value.websites;
     auxPerfil.biography = this.myForm.value.biography;
-    auxPerfil.direction = this.myForm.value.direction;
-    auxPerfil.number = this.myForm.value.number;
     auxPerfil.gender = this.myForm.value.gender;
     let userStorage = {'usuario': auxPerfil};
     localStorage.setItem('usuario', JSON.stringify(userStorage));
@@ -69,8 +67,6 @@ export class EditProfilePage {
       surname: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       websites: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z0-9_.*$#-%/@ ]*')])],
       biography: ['', Validators.compose([Validators.maxLength(60), Validators.pattern('[a-zA-Z0-9_.,/ ]*')])],
-      direction: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*')])],
-      number: ['', Validators.compose([Validators.maxLength(11), Validators.pattern('[0-9-]*')])],
       gender: ['', Validators.required],
     });
   }
@@ -94,8 +90,6 @@ export class EditProfilePage {
     this.myForm.get('surname').setValue(this.userDetail.usuario.surname);
     this.myForm.get('websites').setValue(this.userDetail.usuario.websites);
     this.myForm.get('biography').setValue(this.userDetail.usuario.biography);
-    this.myForm.get('direction').setValue(this.userDetail.usuario.direction);
-    this.myForm.get('number').setValue(this.userDetail.usuario.number);
     this.myForm.get('gender').setValue(this.userDetail.usuario.gender);
   }
 }

@@ -63,25 +63,6 @@
         <p color="danger" ion-text *ngIf="myForm.get('biography').hasError('maxLength')">Maximo 60 caracteres</p>
       </ion-item>
 
-      <ion-item>
-        <ion-icon name="card" item-start class="color"></ion-icon>
-        <ion-label stacked>Dirección:</ion-label>
-        <ion-input formControlName="direction" type="text" placeholder="De dónde eres"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="myForm.get('direction').errors && myForm.get('direction').dirty">
-        <p color="danger" ion-text *ngIf="myForm.get('direction').hasError('maxLength')">Maximo 30 caracteres</p>
-      </ion-item>
-
-      <ion-item>
-        <ion-icon name="call" item-start class="color"></ion-icon>
-        <ion-label stacked>Telefono:</ion-label>
-        <ion-input formControlName="number" type="text" placeholder="Mi número"></ion-input>
-      </ion-item>
-      <ion-item *ngIf="myForm.get('number').errors && myForm.get('number').dirty">
-        <p color="danger" ion-text *ngIf="myForm.get('number').hasError('pattern')"> Solo puedes usar numeros</p>
-        <p color="danger" ion-text *ngIf="myForm.get('number').hasError('maxLength')">Maximo 11 numeros</p>
-      </ion-item>
-
       <ion-row radio-group formControlName="gender">
         <ion-col>
           <ion-item>

@@ -10,6 +10,9 @@ import {IonicStorageModule} from '@ionic/storage';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {Keyboard} from '@ionic-native/keyboard';
+//import { Crop } from '@ionic-native/crop';
+//import { Camera } from '@ionic-native/camera';
+//import { CameraPreview } from '@ionic-native/camera-preview';
 
 import {ActivityService} from "../services/activity-service";
 import {TripService} from "../services/trip-service";
@@ -38,6 +41,7 @@ import {PerfilPage} from "../pages/perfil/perfil";
 import { UserProvider } from '../providers/user/user';
 import { PublicacionProvider } from '../providers/publicacion/publicacion';
 import { PublicarPage } from '../pages/publicar/publicar';
+
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -118,6 +122,9 @@ export function createTranslateLoader(http: HttpClient) {
     TripService,
     WeatherProvider,
     UserProvider,
+    //Camera,
+    //CameraPreview,
+    //Crop,
     PublicacionProvider
   ]
 })
