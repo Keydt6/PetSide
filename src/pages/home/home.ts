@@ -12,6 +12,7 @@ import {ChatPage} from "../chat/chat";
 import {PerfilPage} from "../perfil/perfil";
 import { PublicarPage } from "../publicar/publicar";
 import { PublicacionProvider } from '../../providers/publicacion/publicacion';
+import moment from 'moment';
 
 @Component({
   selector: 'page-home',
@@ -38,33 +39,6 @@ export class HomePage {
     following: 1052,
     posts: 35
   };
-
-  posts = [
-    {
-      postImageUrl: 'assets/img/me-adoptas.jpg',
-      text: `Tu puedes derle una nueva oportunidad a una mascota abandonada, se parte de su mundo.`,
-      date: 'Diciembre 13, 2018',
-      likes: 12,
-      comments: 4,
-      timestamp: 'Hace 3h'
-    },
-    {
-      postImageUrl: 'assets/img/maltrato-animal.jpg',
-      text: '"Cualquiera que esté acostumbrado a menospreciar la vida de cualquier ser viviente está en peligro de menospreciar también la vida humana", Albert Schweitzer, premio Nobel de la Paz 1952. No permitamos el maltrato animal.',
-      date: 'Diciembre 13, 2018',
-      likes: 30,
-      comments: 64,
-      timestamp: 'Hace 6h'
-    },
-    {
-      postImageUrl: 'assets/img/cachorros-adopcion.jpg',
-      text: `Estos cachorros estan en adopcion para quien quiera darles un hogar.`,
-      date: 'Diciembre 10, 2018',
-      likes: 46,
-      comments: 66,
-      timestamp: '3d'
-    },
-  ];
 
   public User: any = [];
   public listPosts: any;
@@ -95,6 +69,9 @@ export class HomePage {
       publicaciones = publicaciones.json();
       this.listPosts = publicaciones.publications;
       console.log(this.listPosts);
+      for(let p of this.listPosts) {
+        p['dateMoment'] = moment(p.creationDate).startOf('minute').fromNow();
+      }
     });  
   }
 
@@ -128,7 +105,7 @@ export class HomePage {
   }
 
   goToProfile(){
-    this.nav.push(PerfilPage);
+    this.nav.push(PerfilPage, {}, {animate: true, direction: 'forward'});
   }
 
   goToEditProfile(){

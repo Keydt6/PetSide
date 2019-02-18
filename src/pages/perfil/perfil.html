@@ -57,19 +57,19 @@
         </ion-card-content>
         <ion-row>
           <ion-col>
-            <button ion-button color="purple" clear small icon-left (click)="like(post)">
+            <button ion-button class="lc" clear small icon-left (click)="like(post)">
                 <ion-icon name='thumbs-up'></ion-icon>
                 {{post.likes}} Likes
               </button>
           </ion-col>
           <ion-col>
-            <button ion-button color="purple" clear small icon-left (click)="comment(post)">
-                <ion-icon name='text'></ion-icon>
-                {{post.comments}} Comments
-              </button>
+            <button ion-button class="lc" clear small icon-left (click)="comment(post)">
+              <ion-icon name='text'></ion-icon>
+              {{post.comments}} Comments
+            </button>
           </ion-col>
-          <ion-col align-self-center text-center>
-            <span am-time-ago="post.creationDate | amFromUnix">{{post.creationDate}}</span>
+          <ion-col align-self-center text-center class="lc">
+            <span am-time-ago="post.creationDate | amFromUnix">{{post.dateMoment}}</span>
           </ion-col>
         </ion-row>
       </ion-card>

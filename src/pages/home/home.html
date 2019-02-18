@@ -64,10 +64,8 @@
                 {{post.comments}} Comments
               </button>
           </ion-col>
-          <ion-col col-3 align-self-center text-center>
-            <p>
-              {{post.timestamp}}
-            </p>
+          <ion-col align-self-center text-center class="lc">
+            <span am-time-ago="post.creationDate | amFromUnix">{{post.dateMoment}}</span>
           </ion-col>
         </ion-row>
       </ion-card>
