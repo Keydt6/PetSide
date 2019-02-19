@@ -10,8 +10,8 @@ import {IonicStorageModule} from '@ionic/storage';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {Keyboard} from '@ionic-native/keyboard';
-import { Crop } from '@ionic-native/crop';
-import { Camera } from '@ionic-native/camera';
+//import { Crop } from '@ionic-native/crop';
+//import { CameraOriginal } from '@ionic-native/camera';
 //import { CameraPreview } from '@ionic-native/camera-preview';
 
 import {ActivityService} from "../services/activity-service";
@@ -122,7 +122,7 @@ export function createTranslateLoader(http: HttpClient) {
     TripService,
     WeatherProvider,
     UserProvider,
-    //Camera,
+    //CameraOriginal, 
     //CameraPreview,
     //Crop,
     PublicacionProvider

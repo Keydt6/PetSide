@@ -7,6 +7,9 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Add Chat</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
@@ -15,11 +18,11 @@
   <form>
     <ion-list>
       <ion-item>
-        <ion-label floating>Enter Friend's Name</ion-label>
+        <ion-label floating>Introduce el nombre de tu amigo</ion-label>
         <ion-input type="text" name="roomname" required=""></ion-input>
       </ion-item>
       <ion-item>
-        <button ion-button full class="color, letra, fondo" tappable type="submit" (click)="toGoChat()">Add</button>
+        <button ion-button full class="color, letra, fondo" tappable type="submit" (click)="toGoChat()">Agregar</button>
       </ion-item>
     </ion-list>
   </form>

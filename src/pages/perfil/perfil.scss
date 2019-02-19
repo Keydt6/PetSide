@@ -275,8 +275,8 @@ page-perfil {
   }
 
   .icon-change {
-    top: 109px;
-    margin: 0px;
+    top: 109px !important;
+    margin: 0px !important;
   }
 
   .list-item-content {
@@ -317,5 +317,19 @@ page-perfil {
   .lc {
     font-family: sans-serif;
     color: #060605;
+  }
+
+  .letra {
+    font-family: serif;
+    font-weight: 400;
+    color: #060605;
+  }
+
+  .color{
+    color: #060605;
+  }
+  
+  .fondo{
+    background-color: #060605;
   }
 }

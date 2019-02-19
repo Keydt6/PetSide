@@ -53,4 +53,20 @@ export class PublicacionProvider {
     this.perfil = this.userDetails.usuario;
     return this.http.get(this.urlServer + 'findPublicationsByUser/' + this.perfil._id);
   }
+
+  addLike(post) {
+    console.log('post provider');
+    console.log(post);
+    console.log('id post provider');
+    console.log(post._id);
+    var headers: any = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return new Promise((resolve, reject) => {
+      this.http.post(this.urlServer + 'likePublication/' + post._id, post, headers)
+        .subscribe(res => {
+          resolve(res);
+        }, (err) => {
+          reject(err);
+        });
+    });
+  }
 }

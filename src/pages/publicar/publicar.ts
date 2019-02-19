@@ -26,6 +26,7 @@ export class PublicarPage {
 
   public publicationForm: FormGroup;
   public loader: any;
+  public cropped_img_base64: any;
 
   constructor(
   	public navCtrl: NavController,
@@ -59,8 +60,10 @@ export class PublicarPage {
   	this.loader.present();
   	if(this.publicationForm.valid) {
       console.log('Valido');
-      console.log(this.publicationForm.value);  
-      this.pubProvider.addPublication(this.publicationForm.value).then((result) => {
+      console.log(this.publicationForm.value);
+      let publ = this.publicationForm.value;
+      //publ['photo': cropped_img_base64];
+      this.pubProvider.addPublication(publ).then((result) => {
         console.log('result');
         console.log(result.toString());
         this.presentAlert('Publicacion', 'Publicacion realizada con exito');
@@ -115,13 +118,11 @@ export class PublicarPage {
               image.width, image.height,    
               0, 0,                               
               image.width, image.height);
-          let cropped_img_base64 = canvas.toDataURL();
-          this.navCtrl.push('publicationRegisterPage',{ photo: cropped_img_base64 },
-          {animate: true, direction: 'forward'});
+          this.cropped_img_base64 = canvas.toDataURL();
         }
       }, error => alert(error));
      }, (err) => {
       alert(err);
     });
-  }Ç*/
+  }*/
 }

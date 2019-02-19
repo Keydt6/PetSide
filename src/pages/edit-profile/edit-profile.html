@@ -1,32 +1,19 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Editar Perfil</ion-title>
-    <!--
-    <ion-buttons end>
-      <button ion-button tappable>
-        <ion-icon name="checkmark-circle-outline"></ion-icon>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
     </button>
-    </ion-buttons>
-    -->
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <!--
-  <div id="profile-info">
-    <img id="profile-image" src="../assets/img/profile/profile-2.jpg">
-    <div>
-      <button>Cambiar imagen</button>
-    </div>
-  </div>
-  -->
-
   <form [formGroup]="myForm">
     <ion-list>
       <ion-item>
         <ion-icon name="person" item-start class="color"></ion-icon>
         <ion-label stacked>Nombres:</ion-label>
-        <ion-input formControlName="name" type="text" placeholder="Nombre"></ion-input>
+        <ion-input formControlName="name" type="text" placeholder="Nombre" class="letra"></ion-input>
       </ion-item>
       <ion-item *ngIf="myForm.get('name').errors && myForm.get('name').dirty">
         <p color="danger" ion-text *ngIf="myForm.get('name').hasError('required')">Debe indicar su nombre</p>
@@ -37,7 +24,7 @@
       <ion-item>
         <ion-icon name="person" item-start class="color"></ion-icon>
         <ion-label stacked>Apellidos:</ion-label>
-        <ion-input formControlName="surname" type="text" placeholder="Apellido"></ion-input>
+        <ion-input formControlName="surname" type="text" placeholder="Apellido" class="letra"></ion-input>
       </ion-item>
       <ion-item *ngIf="myForm.get('surname').errors && myForm.get('surname').dirty">
         <p color="danger" ion-text *ngIf="myForm.get('surname').hasError('required')">Debe indicar su apellido</p>
@@ -48,7 +35,7 @@
       <ion-item>
         <ion-icon name="at" item-start class="color"></ion-icon>
         <ion-label stacked>Sitios Web:</ion-label>
-        <ion-input formControlName="websites" type="text" placeholder="..."></ion-input>
+        <ion-input formControlName="websites" type="text" placeholder="..." class="letra"></ion-input>
       </ion-item>
       <ion-item *ngIf="myForm.get('websites').errors && myForm.get('websites').dirty">
         <p color="danger" ion-text *ngIf="myForm.get('websites').hasError('maxLength')">Maximo 30 caracteres</p>
@@ -57,7 +44,7 @@
       <ion-item>
         <ion-icon name="book" item-start class="color"></ion-icon>
         <ion-label stacked>Biografía:</ion-label>
-        <ion-input formControlName="biography" type="text" placeholder="Acerca de mi"></ion-input>
+        <ion-input formControlName="biography" type="text" placeholder="Acerca de mi" class="letra"></ion-input>
       </ion-item>
       <ion-item *ngIf="myForm.get('biography').errors && myForm.get('biography').dirty">
         <p color="danger" ion-text *ngIf="myForm.get('biography').hasError('maxLength')">Maximo 60 caracteres</p>
@@ -68,14 +55,14 @@
           <ion-item>
             <ion-icon name="woman" item-start class="color"></ion-icon>
             <ion-label class="color">Mujer</ion-label>
-            <ion-radio value="2"></ion-radio>
+            <ion-radio value="2" class="letra"></ion-radio>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
             <ion-icon name="man" item-start class="color"></ion-icon>
             <ion-label class="color">Hombre</ion-label>
-            <ion-radio value="1"></ion-radio>
+            <ion-radio value="1" class="letra"></ion-radio>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -84,7 +71,7 @@
       </ion-item>
     </ion-list>
     <div padding>
-      <button ion-button block class="color" type="submit" (click)="saveData()">Guardar cambios</button>
+      <button ion-button block class="color, letra, fondo" type="submit" (click)="saveData()">Guardar cambios</button>
     </div>
   </form>
 </ion-content>

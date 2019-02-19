@@ -358,6 +358,14 @@ ion-navbar.no-border {
   }
 }
 
+.letra {
+  font-family: serif;
+  color: #060605;
+}
+.color{
+  color: #060605;
+  }
+
 // Menu user profile
 .user-profile {
   .user-avatar {
@@ -370,8 +378,9 @@ ion-navbar.no-border {
       border-radius: 50%;
     }
   }
+
   .toolbar-background {
-    background-image: linear-gradient(135deg, color($colors, dark), color($colors, primary));
+    background-image: linear-gradient(135deg, color($colors, dark), color($colors, light));
   }
 
   .other-data {

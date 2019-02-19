@@ -6,9 +6,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Keyboard } from '@ionic-native/keyboard';
 
 import { HomePage } from "../pages/home/home";
+import {PerfilPage} from "../pages/perfil/perfil";
+import {NotificationsPage} from "../pages/notifications/notifications";
+import {ChatPage} from "../pages/chat/chat";
+import {SearchLocationPage} from "../pages/search-location/search-location";
+import {SettingsPage} from "../pages/settings/settings";
 import { LoginPage } from "../pages/login/login";
-import { LocalWeatherPage } from "../pages/local-weather/local-weather";
-import { EditProfilePage } from "../pages/edit-profile/edit-profile";
 
 export interface MenuItem {
     title: string;
@@ -25,8 +28,6 @@ export class MyApp {
 
   rootPage: any = LoginPage;
 
-  formPage: any = EditProfilePage;
-
   appMenuItems: Array<MenuItem>;
 
 
@@ -39,8 +40,12 @@ export class MyApp {
     this.initializeApp();
 
     this.appMenuItems = [
-      {title: 'Home', component: HomePage, icon: 'home'},
-      {title: 'Local Weather', component: LocalWeatherPage, icon: 'partly-sunny'}
+      {title: 'Inicio', component: HomePage, icon: 'home'},
+      {title: 'Perfil', component: PerfilPage, icon: 'person'},
+      {title: 'Notificaciones', component: NotificationsPage, icon: 'notifications'},
+      {title: 'Chat', component: ChatPage, icon: 'chatbubbles'},
+      {title: 'Buscar', component: ChatPage, icon: 'search'},
+      {title: 'Configuraciones', component: SettingsPage, icon: 'settings'}
     ];
     
   }
@@ -49,16 +54,9 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
 
-      //*** Control Splash Screen
-      // this.splashScreen.show();
-      // this.splashScreen.hide();
-
       //*** Control Status Bar
       this.statusBar.styleDefault();
       this.statusBar.overlaysWebView(false);
-
-      //*** Control Keyboard
-      //this.keyboard.disableScroll(true);
     });
   }
 
@@ -68,9 +66,6 @@ export class MyApp {
     this.nav.setRoot(page.component);
   }
 
-  editProfile() {
-    this.nav.setRoot(this.formPage);
-  }
 
   logout() {
     this.nav.setRoot(LoginPage);

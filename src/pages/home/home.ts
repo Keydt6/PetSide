@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {NavController, NavParams, PopoverController} from "ionic-angular";
+import {NavController, NavParams, PopoverController, ToastController} from "ionic-angular";
 import {Storage} from '@ionic/storage';
 
 //import { ToastService } from '/providers/util/toast.service';
@@ -47,6 +47,7 @@ export class HomePage {
     public nav: NavController,
     public navParams: NavParams,
     public popoverCtrl: PopoverController,
+    public toastCtrl: ToastController,
     public publProvider: PublicacionProvider) {
 
     this.listPosts = [];
@@ -117,10 +118,7 @@ export class HomePage {
     this.nav.push(PublicarPage);
   }
 
-
-
-
-/*
+  /*
   //publicaciones
   ionViewDidLoad() {
     console.log('Hello ProfileFour Page');
@@ -134,15 +132,39 @@ export class HomePage {
   imageTapped(post) {
     this.toastCtrl.create('Post image clicked');
   }
+  */
 
   comment(post) {
-    this.toastCtrl.create('Comments clicked');
+    this.presentToast('Comments clicked');
   }
 
   like(post) {
-    this.toastCtrl.create('Like clicked');
+    console.log(post);
+    this.publProvider.addLike(post).then((result) => {
+      console.log('result');
+      console.log(result);
+      console.log('like');
+      post.likes = post.likes + 1;
+    }, (err) => {
+      console.log('err');
+      console.log(err);              
+    });
+
+    this.presentToast('Like clicked');
   }
-*/
+
+  presentToast(m: string) {
+    let toast = this.toastCtrl.create({
+       message: m,
+      duration: 3000,
+      position: 'top',
+      //cssClass: 'dark-trans',
+      closeButtonText: 'OK',
+      showCloseButton: true
+    });
+
+    toast.present();
+  }
 }
 
 //

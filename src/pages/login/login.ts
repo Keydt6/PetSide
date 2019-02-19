@@ -81,7 +81,6 @@ export class LoginPage {
             localStorage.setItem('usuario', JSON.stringify(data));
             this.storage.set('usuario', JSON.stringify(data));
             this.navCtrl.setRoot(HomePage);
-            this.presentToast();
           } 
         }, error => {
           console.log(error);

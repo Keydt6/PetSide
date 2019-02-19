@@ -4,26 +4,15 @@
     <ion-title>
       <strong>PET SITE</strong> 
     </ion-title>
-    <ion-buttons end>
-      <button ion-button tappable (click)="goToProfile()">
-        <ion-icon name="person"></ion-icon>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-buttons end>
       <button ion-button tappable (click)="presentNotifications($event)">
         <ion-icon name="notifications"></ion-icon>
       </button>
-        <button ion-button tappable (click)="goToChat()">
-            <ion-icon name="chatbubbles"></ion-icon>
-        </button>
-      <button ion-button tappable (click)="choosePlace('from')">
-      <ion-icon name="search"></ion-icon>
-      </button>
-      <button ion-button tappable (click)="goToAccount()">
-        <ion-icon name="settings"></ion-icon>
-      </button>
     </ion-buttons>
   </ion-navbar>
-  <script src="node_modules/moment/moment.js"></script>
-  <script src="node_modules/angular-moment/angular-moment.js"></script>
 </ion-header>
 
 //Aquí va el home
@@ -45,7 +34,6 @@
             <img [src]="user.profileImage">
           </ion-avatar>
           <h2 class="sticky">{{post.userId.name}}</h2>
-          <p>{{post.date}}</p>
         </ion-item>
         <!-- <img [src]="post.postImageUrl" (click)="imageTapped(post)"> -->
         <ion-card-content>

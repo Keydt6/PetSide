@@ -4,12 +4,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Perfil</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
 	<div id="profile-bg" [ngStyle]="{'background-image': 'url(' + imageUrl +')'}">
-   <button class="icon-change" ion-button>
+   <button class="icon-change, color, letra, fondo" ion-button>
       <ion-icon name="camera"> EDITAR</ion-icon>
     </button>
   </div>
